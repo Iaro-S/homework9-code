@@ -6,17 +6,18 @@ public class Product {
     public double price;
     public int quantity;
 
-    public Product() {
-    }
-
-    public Product(String name, String description, double price, int quantity) {
+    protected Product(String name, String description, double price, int quantity) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
     }
 
+    public Product() {
+
+    }
+
     protected void describeProduct(String name, String description, double price, int quantity) {
-        System.out.println ("Product information: " + name + " " + description + " pret:" + price + ",Cant:" + quantity);
+        System.out.println ("\n"+"Product information: " + name + "-" + description + ", pret:" + price + ",Available quantity: " + quantity);
     }
 }
