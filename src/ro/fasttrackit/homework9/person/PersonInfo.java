@@ -1,11 +1,21 @@
 package ro.fasttrackit.homework9.person;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.time.Period;
 
-public interface PersonInfo {
+public class PersonInfo {
+    private final Person person;
 
-    String fullName(String firstName, String lastName);
 
-    public void calculateAge(int year,int month,int day);
+    public PersonInfo(Person person) {
+        this.person = person;
+    }
+
+    public String fullName() {
+        return person.getFirstName () + " " + person.getLastName ();
+    }
+
+    public int calculateAge() {
+        return Period.between (person.getBirthday (), LocalDate.now ()).getYears ();
+    }
 }
