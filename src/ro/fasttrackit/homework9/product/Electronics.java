@@ -1,19 +1,32 @@
 package ro.fasttrackit.homework9.product;
 
 public class Electronics extends Product {
+    private final String length;
+    private final String width;
+    private final String height;
+    private final String weight;
 
-    protected Electronics(String name, String description, double price, int quantity) {
+    public Electronics(String name, String description, double price, int quantity, String length, String width, String height, String weight) {
         super (name, description, price, quantity);
+        this.length = length;
+        this.width = width;
+        this.height = height;
+        this.weight = weight;
     }
 
-    @Override
-    protected void describeProduct(String name, String description, double price, int quantity) {
-        super.describeProduct (name, description, price, quantity);
+    public String getHeight() {
+        return height;
     }
 
-    protected String describeElectronics(String length, String width, String height, String weight) {
-        describeProduct (name, description, price, quantity);
-        System.out.println ("Electronics dimensions are - length:" + length + ",widith:" + width + ",height:" + height + ",weight:" + weight);
-        return "";
+    public String getLength() {
+        return length;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public String getWidth() {
+        return width;
     }
 }
